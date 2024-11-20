@@ -8,10 +8,15 @@ using namespace std;
 
 class Animal 
 {
+public:  
     virtual void speak()
     {
         cout << " " << endl;
     }
+    
+    virtual void eat() {}
+
+    virtual ~Animal() {} //destructor
 };
 
 class Dog : public Animal
@@ -20,6 +25,11 @@ public:
     void speak() override 
     {
         cout << "Dog: WOOF WOOF" << endl;
+    }
+
+    void eat() 
+    {
+        cout << "Munch crunch (he is eating)" << endl;
     }
 };
 
@@ -30,6 +40,11 @@ public:
     {
         cout << "Cat: MEOW" << endl;
     }
+    
+    void eat()
+    {
+        cout << "Munch crunch (he is eating)" << endl;
+    }
 };
 
 int main()
@@ -38,7 +53,10 @@ int main()
     Cat cat;
 
     dog.speak();
+    dog.eat();
+
     cat.speak();
+    cat.eat();
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
